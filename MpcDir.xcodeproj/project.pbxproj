@@ -21,6 +21,7 @@
 		F7930659163D244C006BE992 /* MpcDirTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7930658163D244C006BE992 /* MpcDirTests.m */; };
 		F7930664163D2769006BE992 /* MSCDir.m in Sources */ = {isa = PBXBuildFile; fileRef = F7930663163D2769006BE992 /* MSCDir.m */; };
 		F7C538D7163F0E8E00253FDB /* MSCMpdClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */; };
+		F7C7AC261651985300BB63E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7C7AC251651985300BB63E2 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		F7930663163D2769006BE992 /* MSCDir.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCDir.m; sourceTree = "<group>"; };
 		F7C538D5163F0E8E00253FDB /* MSCMpdClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMpdClient.h; sourceTree = "<group>"; };
 		F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMpdClient.m; sourceTree = "<group>"; };
+		F7C7AC251651985300BB63E2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		F793061F163D244B006BE992 = {
 			isa = PBXGroup;
 			children = (
+				F7C7AC251651985300BB63E2 /* README.md */,
 				F7930634163D244B006BE992 /* MpcDir */,
 				F7930651163D244C006BE992 /* MpcDirTests */,
 				F793062D163D244B006BE992 /* Frameworks */,
@@ -248,6 +251,7 @@
 				F7930639163D244B006BE992 /* InfoPlist.strings in Resources */,
 				F793063F163D244B006BE992 /* Credits.rtf in Resources */,
 				F7930645163D244B006BE992 /* MainMenu.xib in Resources */,
+				F7C7AC261651985300BB63E2 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
