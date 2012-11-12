@@ -103,39 +103,32 @@
 // ========
 
 - (IBAction) searchClick:(id)sender {
-    NSMutableArray* arr = [NSMutableArray array];
+    NSArray* arr = [mpd ls: [patternField stringValue]];
     
-    for (NSString* dir in [mpd ls: [patternField stringValue]]) {
-        [arr addObject: [MSCDir dirWithName:dir]];
-    }
+    self.directories = [arr map:^(id dir) {
+        return [MSCDir dirWithName:dir];
+    }];
     
-    self.directories = arr;
     [self.window makeFirstResponder: patternField];
 }
 
 - (IBAction) listClick:(id)sender {
-    NSUInteger      index = [self.directoriesController selectionIndex];
-    MSCDir*         dir   = [self.directories objectAtIndex: index];
-    NSMutableArray* arr   = [NSMutableArray array];
+    NSUInteger  index = [self.directoriesController selectionIndex];
+    MSCDir*     dir   = [self.directories objectAtIndex: index];
+    NSArray*    arr   = [mpd listall: [dir path]];
     
     [patternField setStringValue:[dir path]];
     
-    for (NSString* song in [mpd listall: [dir path]]) {
-        [arr addObject: [MSCDir dirWithPath:song]];
-    }
-    
-    self.songs = arr;
+    self.songs = [arr map:^(id song) {
+        return [MSCDir dirWithPath:song];
+    }];
     isInPlaylist = FALSE;
 }
 
 - (IBAction) playlistClick:(id)sender {
-    NSMutableArray* arr   = [NSMutableArray array];
-    
-    for (NSString* song in [mpd playlist]) {
-        [arr addObject: [MSCDir dirWithPath:song]];
-    }
-    
-    self.songs = arr;
+    self.songs = [[mpd playlist] map:^(id song) {
+        return [MSCDir dirWithPath:song];
+    }];
     isInPlaylist = TRUE;
 }
 

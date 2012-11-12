@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F7217D22164EA1340023E1AF /* MSCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F7217D21164EA1340023E1AF /* MSCPreferences.m */; };
+		F74D6FE51651ABD800BA849A /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = F74D6FE41651ABD800BA849A /* NSArray+FP.m */; };
 		F7914C77164FA08A0060ECCB /* MSCStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = F7914C76164FA08A0060ECCB /* MSCStatus.m */; };
 		F793062F163D244B006BE992 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F793062E163D244B006BE992 /* Cocoa.framework */; };
 		F7930639163D244B006BE992 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7930637163D244B006BE992 /* InfoPlist.strings */; };
@@ -37,6 +38,8 @@
 /* Begin PBXFileReference section */
 		F7217D20164EA1340023E1AF /* MSCPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCPreferences.h; sourceTree = "<group>"; };
 		F7217D21164EA1340023E1AF /* MSCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCPreferences.m; sourceTree = "<group>"; };
+		F74D6FE31651ABD800BA849A /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
+		F74D6FE41651ABD800BA849A /* NSArray+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FP.m"; sourceTree = "<group>"; };
 		F7914C75164FA08A0060ECCB /* MSCStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCStatus.h; sourceTree = "<group>"; };
 		F7914C76164FA08A0060ECCB /* MSCStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCStatus.m; sourceTree = "<group>"; };
 		F793062A163D244B006BE992 /* MpcDir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MpcDir.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +144,8 @@
 				F7217D21164EA1340023E1AF /* MSCPreferences.m */,
 				F7914C75164FA08A0060ECCB /* MSCStatus.h */,
 				F7914C76164FA08A0060ECCB /* MSCStatus.m */,
+				F74D6FE31651ABD800BA849A /* NSArray+FP.h */,
+				F74D6FE41651ABD800BA849A /* NSArray+FP.m */,
 			);
 			path = MpcDir;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				F7C538D7163F0E8E00253FDB /* MSCMpdClient.m in Sources */,
 				F7217D22164EA1340023E1AF /* MSCPreferences.m in Sources */,
 				F7914C77164FA08A0060ECCB /* MSCStatus.m in Sources */,
+				F74D6FE51651ABD800BA849A /* NSArray+FP.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

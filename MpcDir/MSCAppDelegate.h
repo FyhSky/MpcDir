@@ -10,6 +10,7 @@
 #import "MSCMpdClient.h"
 #import "MSCDir.h"
 #import "MSCPreferences.h"
+#import "NSArray+FP.h"
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate>
 {
@@ -31,10 +32,10 @@
 @property (assign) IBOutlet NSWindow* window;
 @property (assign) IBOutlet NSWindow* preferencesWindow;
 
-@property (retain) NSMutableArray* directories;
+@property (retain) NSArray* directories;
 @property (assign) IBOutlet NSArrayController* directoriesController;
 
-@property (retain) NSMutableArray* songs;
+@property (retain) NSArray* songs;
 @property (assign) IBOutlet NSArrayController* songsController;
 
 @property (retain) MSCPreferences* preferences;
