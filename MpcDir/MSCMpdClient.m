@@ -142,7 +142,7 @@
     NSTask* task = [[NSTask alloc] init];
     NSPipe* tout = [NSPipe pipe];
     
-    NSLog(@"mpcrun: %@", args);
+    NSLog(@"mpcquery: %@", args);
     
     [task setLaunchPath: preferences.client];
     [task setArguments: args];
