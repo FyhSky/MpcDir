@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "MSCPreferences.h"
 #import "MSCStatus.h"
+#import "NSArray+FP.h"
+
+typedef id(^LineBlock)(NSString*);
 
 @interface MSCMpdClient : NSObject
 
@@ -69,14 +72,17 @@
 
 // List all musical files and directories in path.
 //   Path should be relative to your musical directory.
-- (NSArray*) ls: (NSString*)path;
+//   Performs block on every musical file and returns list of results.
+- (NSArray*) ls:(NSString*)path withBlock:(LineBlock)block;
 
 // List all musical files in path recursively.
 //   Path should be relative to your musical directory.
-- (NSArray*) listall: (NSString*)path;
+//   Performs block on every musical file and returns list of results.
+- (NSArray*) listall:(NSString*)path withBlock:(LineBlock)block;
 
 // List all musical files in your playlist.
-- (NSArray*) playlist;
+//   Performs block on every musical file and returns list of results.
+- (NSArray*) playlist:(LineBlock)block;
 
 
 

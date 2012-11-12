@@ -103,30 +103,26 @@
 // ========
 
 - (IBAction) searchClick:(id)sender {
-    NSArray* arr = [mpd ls: [patternField stringValue]];
-    
-    self.directories = [arr map:^(id dir) {
-        return [MSCDir dirWithName:dir];
+    self.directories = [mpd ls: [patternField stringValue] withBlock:^(id dir) {
+        return [MSCDir dirWithPath:dir];
     }];
-    
     [self.window makeFirstResponder: patternField];
 }
 
 - (IBAction) listClick:(id)sender {
     NSUInteger  index = [self.directoriesController selectionIndex];
     MSCDir*     dir   = [self.directories objectAtIndex: index];
-    NSArray*    arr   = [mpd listall: [dir path]];
     
     [patternField setStringValue:[dir path]];
     
-    self.songs = [arr map:^(id song) {
+    self.songs = [mpd listall: [dir path] withBlock:^(id song) {
         return [MSCDir dirWithPath:song];
     }];
     isInPlaylist = FALSE;
 }
 
 - (IBAction) playlistClick:(id)sender {
-    self.songs = [[mpd playlist] map:^(id song) {
+    self.songs = [mpd playlist:^(id song) {
         return [MSCDir dirWithPath:song];
     }];
     isInPlaylist = TRUE;
