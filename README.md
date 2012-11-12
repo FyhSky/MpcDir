@@ -1,5 +1,8 @@
-MpcDir - music player daemon client with directory based navigation
-===================================================================
+MpcDir
+======
+
+Music player daemon client with directory based navigation
+
 
 Requirements
 ------------
