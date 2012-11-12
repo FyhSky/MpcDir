@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7217D22164EA1340023E1AF /* MSCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F7217D21164EA1340023E1AF /* MSCPreferences.m */; };
+		F7914C77164FA08A0060ECCB /* MSCStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = F7914C76164FA08A0060ECCB /* MSCStatus.m */; };
 		F793062F163D244B006BE992 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F793062E163D244B006BE992 /* Cocoa.framework */; };
 		F7930639163D244B006BE992 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7930637163D244B006BE992 /* InfoPlist.strings */; };
 		F793063B163D244B006BE992 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F793063A163D244B006BE992 /* main.m */; };
@@ -17,6 +19,8 @@
 		F793064E163D244C006BE992 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F793062E163D244B006BE992 /* Cocoa.framework */; };
 		F7930656163D244C006BE992 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7930654163D244C006BE992 /* InfoPlist.strings */; };
 		F7930659163D244C006BE992 /* MpcDirTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7930658163D244C006BE992 /* MpcDirTests.m */; };
+		F7930664163D2769006BE992 /* MSCDir.m in Sources */ = {isa = PBXBuildFile; fileRef = F7930663163D2769006BE992 /* MSCDir.m */; };
+		F7C538D7163F0E8E00253FDB /* MSCMpdClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F7217D20164EA1340023E1AF /* MSCPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCPreferences.h; sourceTree = "<group>"; };
+		F7217D21164EA1340023E1AF /* MSCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCPreferences.m; sourceTree = "<group>"; };
+		F7914C75164FA08A0060ECCB /* MSCStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCStatus.h; sourceTree = "<group>"; };
+		F7914C76164FA08A0060ECCB /* MSCStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCStatus.m; sourceTree = "<group>"; };
 		F793062A163D244B006BE992 /* MpcDir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MpcDir.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F793062E163D244B006BE992 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		F7930631163D244B006BE992 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,6 +57,10 @@
 		F7930655163D244C006BE992 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F7930657163D244C006BE992 /* MpcDirTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MpcDirTests.h; sourceTree = "<group>"; };
 		F7930658163D244C006BE992 /* MpcDirTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MpcDirTests.m; sourceTree = "<group>"; };
+		F7930662163D2769006BE992 /* MSCDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCDir.h; sourceTree = "<group>"; };
+		F7930663163D2769006BE992 /* MSCDir.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCDir.m; sourceTree = "<group>"; };
+		F7C538D5163F0E8E00253FDB /* MSCMpdClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMpdClient.h; sourceTree = "<group>"; };
+		F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMpdClient.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +129,15 @@
 				F7930640163D244B006BE992 /* MSCAppDelegate.h */,
 				F7930641163D244B006BE992 /* MSCAppDelegate.m */,
 				F7930643163D244B006BE992 /* MainMenu.xib */,
+				F7930662163D2769006BE992 /* MSCDir.h */,
+				F7930663163D2769006BE992 /* MSCDir.m */,
+				F7C538D5163F0E8E00253FDB /* MSCMpdClient.h */,
+				F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */,
 				F7930635163D244B006BE992 /* Supporting Files */,
+				F7217D20164EA1340023E1AF /* MSCPreferences.h */,
+				F7217D21164EA1340023E1AF /* MSCPreferences.m */,
+				F7914C75164FA08A0060ECCB /* MSCStatus.h */,
+				F7914C76164FA08A0060ECCB /* MSCStatus.m */,
 			);
 			path = MpcDir;
 			sourceTree = "<group>";
@@ -264,6 +284,10 @@
 			files = (
 				F793063B163D244B006BE992 /* main.m in Sources */,
 				F7930642163D244B006BE992 /* MSCAppDelegate.m in Sources */,
+				F7930664163D2769006BE992 /* MSCDir.m in Sources */,
+				F7C538D7163F0E8E00253FDB /* MSCMpdClient.m in Sources */,
+				F7217D22164EA1340023E1AF /* MSCPreferences.m in Sources */,
+				F7914C77164FA08A0060ECCB /* MSCStatus.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +467,7 @@
 				F793065E163D244C006BE992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F793065F163D244C006BE992 /* Build configuration list for PBXNativeTarget "MpcDirTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +476,7 @@
 				F7930661163D244C006BE992 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
