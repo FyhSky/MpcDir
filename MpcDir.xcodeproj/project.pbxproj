@@ -41,6 +41,7 @@
 		F7217D21164EA1340023E1AF /* MSCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCPreferences.m; sourceTree = "<group>"; };
 		F74D6FE31651ABD800BA849A /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
 		F74D6FE41651ABD800BA849A /* NSArray+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FP.m"; sourceTree = "<group>"; };
+		F789C6671652E4F1000BA336 /* MSCDirectoriesDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCDirectoriesDelegate.h; sourceTree = "<group>"; };
 		F7914C75164FA08A0060ECCB /* MSCStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCStatus.h; sourceTree = "<group>"; };
 		F7914C76164FA08A0060ECCB /* MSCStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCStatus.m; sourceTree = "<group>"; };
 		F793062A163D244B006BE992 /* MpcDir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MpcDir.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +152,7 @@
 				F74D6FE41651ABD800BA849A /* NSArray+FP.m */,
 				F7C3ACB01652CB2600742E8F /* MSCDirectoriesView.h */,
 				F7C3ACB11652CB2600742E8F /* MSCDirectoriesView.m */,
+				F789C6671652E4F1000BA336 /* MSCDirectoriesDelegate.h */,
 			);
 			path = MpcDir;
 			sourceTree = "<group>";

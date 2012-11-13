@@ -20,9 +20,8 @@
     return self;
 }
 
-- (void)drawRect:(NSRect)dirtyRect
-{
-    [super drawRect:dirtyRect];
+- (BOOL)acceptsFirstResponder {
+    return YES;
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
@@ -38,17 +37,20 @@
             keyChar = [theArrow characterAtIndex:0];
             
             if ( keyChar == NSLeftArrowFunctionKey ) {
-                [self handleArrowLeft];
+                [directoryDelegate goOutsideDirectory];
+                [self sendAction: self.action to:self.target];
                 return;
             }
             if ( keyChar == NSRightArrowFunctionKey ) {
-                [self handleArrowRight];
+                [directoryDelegate goInsideDirectory];
+                [self sendAction: self.action to:self.target];
                 return;
             }
             
             if ( keyChar == NSUpArrowFunctionKey || keyChar == NSDownArrowFunctionKey ) {
                 [super keyDown:theEvent];
                 [self sendAction: self.action to:self.target];
+                [directoryDelegate viewDirectory];
                 return;
             }
             [super keyDown:theEvent];
@@ -56,14 +58,6 @@
     }
     
     [super keyDown:theEvent];
-}
-
-- (void) handleArrowLeft {
-    NSLog(@"<-");
-}
-
-- (void) handleArrowRight {
-    NSLog(@"->");
 }
 
 

@@ -167,4 +167,56 @@
 }
 
 
+// MSCDirectoriesDelegate
+// ======================
+
+- (void) viewDirectory {
+    //NSLog(@"viewDirectory");
+}
+
+- (void) goInsideDirectory {
+    self.directories = [mpd ls: [patternField stringValue] withBlock:^(id dir) {
+        return [MSCDir dirWithPath:dir];
+    }];
+}
+
+- (void) goOutsideDirectory {
+    NSString* path = patternField.stringValue;
+    NSArray* components = [path pathComponents];
+    
+    NSLog(@"path: %@ of %@", path, components);
+    
+    if (components.count > 1) {
+        
+        NSRange range;
+        range.location = 0;
+        range.length = components.count - 2;
+        
+        NSArray* slice = [components subarrayWithRange:range];
+        
+        path = [self stringByJoiningPathComponents:slice];
+        
+    } else {
+        path = @"";
+    }
+    
+    self.directories = [mpd ls: path withBlock:^(id dir) {
+        return [MSCDir dirWithPath:dir];
+    }];
+}
+
+
+- (NSString*) stringByJoiningPathComponents:(NSArray*) parts
+{
+    NSString* path = @"";
+    
+    for(NSString* newPart in parts) {
+        path = [newPart isAbsolutePath] ?
+            [NSString stringWithString:newPart] :
+            [path stringByAppendingPathComponent:newPart];
+    }
+    
+    return path;
+}
+
 @end
