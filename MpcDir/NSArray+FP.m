@@ -18,4 +18,24 @@
     return resultArray;
 }
 
+- (NSArray*) sliceAt:(NSUInteger)location ofLength:(NSUInteger)length {
+    NSRange range;
+    range.location = location;
+    range.length = length;
+    
+    return [self subarrayWithRange:range];
+}
+
+- (NSString*) stringByJoiningPathComponents {
+    NSString* path = @"";
+    
+    for(NSString* newPart in self) {
+        path = [newPart isAbsolutePath] ?
+                [NSString stringWithString:newPart] :
+                [path stringByAppendingPathComponent:newPart];
+    }
+    
+    return path;
+}
+
 @end

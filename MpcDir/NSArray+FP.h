@@ -12,6 +12,8 @@ typedef id(^MapBlock)(id);
 
 @interface NSArray (FP)
 
-- (NSArray *)map:(MapBlock)block;
+- (NSArray*) map:(MapBlock)block;
+- (NSArray*) sliceAt:(NSUInteger)location ofLength:(NSUInteger)length;
+- (NSString*) stringByJoiningPathComponents;
 
 @end
