@@ -45,14 +45,8 @@
                 [self handleArrowRight];
                 return;
             }
-            if ( keyChar == NSUpArrowFunctionKey ) {
-                [self handleArrowUp];
-                [super keyDown:theEvent];
-                [self sendAction: self.action to:self.target];
-                return;
-            }
-            if ( keyChar == NSDownArrowFunctionKey ) {
-                [self handleArrowDown];
+            
+            if ( keyChar == NSUpArrowFunctionKey || keyChar == NSDownArrowFunctionKey ) {
                 [super keyDown:theEvent];
                 [self sendAction: self.action to:self.target];
                 return;
@@ -72,12 +66,5 @@
     NSLog(@"->");
 }
 
-- (void) handleArrowUp {
-    NSLog(@"^");
-}
-
-- (void) handleArrowDown {
-    NSLog(@"v");
-}
 
 @end
