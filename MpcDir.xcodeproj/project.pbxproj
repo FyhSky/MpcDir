@@ -21,6 +21,7 @@
 		F7930656163D244C006BE992 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F7930654163D244C006BE992 /* InfoPlist.strings */; };
 		F7930659163D244C006BE992 /* MpcDirTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F7930658163D244C006BE992 /* MpcDirTests.m */; };
 		F7930664163D2769006BE992 /* MSCDir.m in Sources */ = {isa = PBXBuildFile; fileRef = F7930663163D2769006BE992 /* MSCDir.m */; };
+		F7C3ACB21652CB2600742E8F /* MSCDirectoriesView.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C3ACB11652CB2600742E8F /* MSCDirectoriesView.m */; };
 		F7C538D7163F0E8E00253FDB /* MSCMpdClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */; };
 		F7C7AC261651985300BB63E2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F7C7AC251651985300BB63E2 /* README.md */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,8 @@
 		F7930658163D244C006BE992 /* MpcDirTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MpcDirTests.m; sourceTree = "<group>"; };
 		F7930662163D2769006BE992 /* MSCDir.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCDir.h; sourceTree = "<group>"; };
 		F7930663163D2769006BE992 /* MSCDir.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCDir.m; sourceTree = "<group>"; };
+		F7C3ACB01652CB2600742E8F /* MSCDirectoriesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCDirectoriesView.h; sourceTree = "<group>"; };
+		F7C3ACB11652CB2600742E8F /* MSCDirectoriesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCDirectoriesView.m; sourceTree = "<group>"; };
 		F7C538D5163F0E8E00253FDB /* MSCMpdClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCMpdClient.h; sourceTree = "<group>"; };
 		F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCMpdClient.m; sourceTree = "<group>"; };
 		F7C7AC251651985300BB63E2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
@@ -146,6 +149,8 @@
 				F7914C76164FA08A0060ECCB /* MSCStatus.m */,
 				F74D6FE31651ABD800BA849A /* NSArray+FP.h */,
 				F74D6FE41651ABD800BA849A /* NSArray+FP.m */,
+				F7C3ACB01652CB2600742E8F /* MSCDirectoriesView.h */,
+				F7C3ACB11652CB2600742E8F /* MSCDirectoriesView.m */,
 			);
 			path = MpcDir;
 			sourceTree = "<group>";
@@ -298,6 +303,7 @@
 				F7217D22164EA1340023E1AF /* MSCPreferences.m in Sources */,
 				F7914C77164FA08A0060ECCB /* MSCStatus.m in Sources */,
 				F74D6FE51651ABD800BA849A /* NSArray+FP.m in Sources */,
+				F7C3ACB21652CB2600742E8F /* MSCDirectoriesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
