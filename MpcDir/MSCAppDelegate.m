@@ -41,10 +41,7 @@
 // ===================
 
 - (IBAction) addClick:(id)sender {
-    NSUInteger index = [self.directoriesController selectionIndex];
-    MSCDir*    dir   = [self.directories objectAtIndex: index];
-    
-    [mpd add: [dir path]];
+    [mpd add: [self currentDirectoryPath]];
     [self playlistClick: nil];
 }
 
@@ -110,12 +107,11 @@
 }
 
 - (IBAction) listClick:(id)sender {
-    NSUInteger  index = [self.directoriesController selectionIndex];
-    MSCDir*     dir   = [self.directories objectAtIndex: index];
+    NSString* path = [self currentDirectoryPath];
     
-    [patternField setStringValue:[dir path]];
+    [patternField setStringValue: path];
     
-    self.songs = [mpd listall: [dir path] withBlock:^(id song) {
+    self.songs = [mpd listall: path withBlock:^(id song) {
         return [MSCDir dirWithPath:song];
     }];
     isInPlaylist = FALSE;
@@ -166,6 +162,14 @@
     [statusField setTitle: [[mpd status] description]];
 }
 
+- (MSCDir*) currentDirectory {
+    return [self.directories objectAtIndex: self.directoriesController.selectionIndex];
+}
+
+- (NSString*) currentDirectoryPath {
+    return [[self currentDirectory] path];
+}
+
 
 // MSCDirectoriesNavigating
 // ========================
@@ -175,13 +179,13 @@
 }
 
 - (void) goInsideDirectory {
-    self.directories = [mpd ls: patternField.stringValue withBlock:^(id dir) {
+    self.directories = [mpd ls: [self currentDirectoryPath] withBlock:^(id dir) {
         return [MSCDir dirWithPath:dir];
     }];
 }
 
 - (void) goOutsideDirectory {
-    NSString*      path = patternField.stringValue;
+    NSString*      path = [self currentDirectoryPath];
     NSArray* components = [path pathComponents];
     
     if (components.count > 1) {
