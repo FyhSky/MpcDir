@@ -20,10 +20,8 @@
     return self;
 }
 
-- (BOOL)acceptsFirstResponder {
-    return YES;
-}
-
+// Handle all keypresses
+//
 - (void)keyDown:(NSEvent *)theEvent {
     
     if ([theEvent modifierFlags] & NSNumericPadKeyMask) { // is arrow pressed ?

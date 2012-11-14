@@ -8,11 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+// Directories navigation protocol
+//   provides a way to handle navigation key presses
+//   in directories view (left pane)
+//
 @protocol MSCDirectoriesNavigating
 @required
 
+// List directory in search field
 - (void) viewDirectory;
+
+// List directory under directories view cursor
 - (void) goInsideDirectory;
+
+// List parent directory is search field
 - (void) goOutsideDirectory;
 
 @end
