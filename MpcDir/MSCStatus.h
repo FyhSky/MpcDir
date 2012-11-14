@@ -21,6 +21,10 @@ typedef enum {
 @property NSString* title;
 @property NSUInteger playlistIndex;
 @property NSUInteger playlistLength;
+@property BOOL repeat;
+@property BOOL random;
+@property BOOL single;
+@property BOOL consume;
 
 + (id) statusWithArray: (NSArray*)data;
 

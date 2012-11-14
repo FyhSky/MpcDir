@@ -33,20 +33,26 @@
 @synthesize title;
 @synthesize playlistIndex;
 @synthesize playlistLength;
+@synthesize repeat;
+@synthesize random;
+@synthesize single;
+@synthesize consume;
 
 + (id) statusWithArray: (NSArray*)data {
     MSCStatus* st = [[MSCStatus alloc] init];
-    
     //NSLog(@"parsing status array: %@", data);
     
     if (st) {
+        NSString* modeLine = nil;
         
         if (data.count <= 2) {
+            modeLine = data[0];
             st.title = @"";
             st.status = MSC_STATUS_STOPPED;
             st.playlistIndex = 0;
             st.playlistLength = 0;
         } else {
+            modeLine = data[2];
             st.title = data[0];
             
             if ([data[1] rangeOfString: @"[playing]"].location != NSNotFound) {
@@ -60,9 +66,21 @@
             st.playlistIndex = 0;
             st.playlistLength = 0;
         }
+        st.repeat  = [self testMode: @"SELF MATCHES '.*repeat: on.*'" withString: modeLine];
+        st.random  = [self testMode: @"SELF MATCHES '.*random: on.*'" withString: modeLine];
+        st.single  = [self testMode: @"SELF MATCHES '.*single: on.*'" withString: modeLine];
+        st.consume = [self testMode: @"SELF MATCHES '.*consume: on.*'" withString: modeLine];
     }
-    
+    /*NSLog(@"MODES");
+    if (st.repeat) { NSLog(@"MODE repeat"); }
+    if (st.random) { NSLog(@"MODE random"); }
+    if (st.single) { NSLog(@"MODE single"); }
+    if (st.consume) { NSLog(@"MODE consume"); }*/
     return st;
+}
+
++ (BOOL) testMode: (NSString*)modeMatch withString: (NSString*) string {
+    return [[NSPredicate predicateWithFormat:modeMatch] evaluateWithObject:string];
 }
 
 - (NSString*) description {
