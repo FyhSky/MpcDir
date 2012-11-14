@@ -1574,7 +1574,7 @@
 															<string key="NSFrameSize">{359, 469}</string>
 															<reference key="NSSuperview" ref="10212837"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="856819910"/>
+															<reference key="NSNextKeyView" ref="13760958"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="1029038766">
@@ -1725,7 +1725,7 @@
 											<string key="NSFrame">{{0, 1}, {361, 487}}</string>
 											<reference key="NSSuperview" ref="1014865589"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="13760958"/>
+											<reference key="NSNextKeyView" ref="10212837"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="856819910"/>
@@ -1760,7 +1760,7 @@
 															<string key="NSFrameSize">{556, 469}</string>
 															<reference key="NSSuperview" ref="1031951900"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="121396221"/>
+															<reference key="NSNextKeyView" ref="876805897"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="380554079">
@@ -1906,7 +1906,7 @@
 											<string key="NSFrame">{{0, 1}, {558, 487}}</string>
 											<reference key="NSSuperview" ref="1024244564"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="876805897"/>
+											<reference key="NSNextKeyView" ref="1031951900"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="121396221"/>
@@ -3510,6 +3510,70 @@
 						<reference key="destination" ref="770660535"/>
 					</object>
 					<int key="connectionID">1642</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">randomMode</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="579711586"/>
+					</object>
+					<int key="connectionID">1643</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">repeatMode</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1040150302"/>
+					</object>
+					<int key="connectionID">1644</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">singleMode</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="744190985"/>
+					</object>
+					<int key="connectionID">1645</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">consumeMode</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="524775771"/>
+					</object>
+					<int key="connectionID">1646</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">randomClick:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="579711586"/>
+					</object>
+					<int key="connectionID">1647</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">repeatClick:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="1040150302"/>
+					</object>
+					<int key="connectionID">1648</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">singleClick:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="744190985"/>
+					</object>
+					<int key="connectionID">1649</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">consumeClick:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="524775771"/>
+					</object>
+					<int key="connectionID">1650</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
@@ -7374,7 +7438,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1642</int>
+			<int key="maxID">1650</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -7385,16 +7449,21 @@
 						<string key="addClick:">id</string>
 						<string key="addDirToPlaylist:">id</string>
 						<string key="clearClick:">id</string>
+						<string key="consumeClick:">id</string>
 						<string key="listClick:">id</string>
+						<string key="pauseClick:">id</string>
 						<string key="playClick:">id</string>
 						<string key="playNextClick:">id</string>
 						<string key="playPreviousClick:">id</string>
 						<string key="playlistClick:">id</string>
+						<string key="randomClick:">id</string>
+						<string key="repeatClick:">id</string>
 						<string key="resetPreferencesClick:">id</string>
 						<string key="savePreferencesClick:">id</string>
 						<string key="searchClick:">id</string>
 						<string key="setDirAsPlaylist:">id</string>
 						<string key="showPreferences:">id</string>
+						<string key="singleClick:">id</string>
 						<string key="statusClick:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
@@ -7410,8 +7479,16 @@
 							<string key="name">clearClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="consumeClick:">
+							<string key="name">consumeClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="listClick:">
 							<string key="name">listClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="pauseClick:">
+							<string key="name">pauseClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="playClick:">
@@ -7428,6 +7505,14 @@
 						</object>
 						<object class="IBActionInfo" key="playlistClick:">
 							<string key="name">playlistClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="randomClick:">
+							<string key="name">randomClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="repeatClick:">
+							<string key="name">repeatClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="resetPreferencesClick:">
@@ -7450,18 +7535,26 @@
 							<string key="name">showPreferences:</string>
 							<string key="candidateClassName">id</string>
 						</object>
+						<object class="IBActionInfo" key="singleClick:">
+							<string key="name">singleClick:</string>
+							<string key="candidateClassName">id</string>
+						</object>
 						<object class="IBActionInfo" key="statusClick:">
 							<string key="name">statusClick:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="consumeMode">NSButton</string>
 						<string key="directoriesController">NSArrayController</string>
 						<string key="directoryMenu">NSMenu</string>
 						<string key="fileMenu">NSMenu</string>
 						<string key="formatMenu">NSMenu</string>
 						<string key="patternField">NSTextField</string>
 						<string key="preferencesWindow">NSWindow</string>
+						<string key="randomMode">NSButton</string>
+						<string key="repeatMode">NSButton</string>
+						<string key="singleMode">NSButton</string>
 						<string key="songsController">NSArrayController</string>
 						<string key="songsView">NSTableView</string>
 						<string key="statusField">NSButton</string>
@@ -7469,6 +7562,10 @@
 						<string key="window">NSWindow</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="consumeMode">
+							<string key="name">consumeMode</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="directoriesController">
 							<string key="name">directoriesController</string>
 							<string key="candidateClassName">NSArrayController</string>
@@ -7492,6 +7589,18 @@
 						<object class="IBToOneOutletInfo" key="preferencesWindow">
 							<string key="name">preferencesWindow</string>
 							<string key="candidateClassName">NSWindow</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="randomMode">
+							<string key="name">randomMode</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="repeatMode">
+							<string key="name">repeatMode</string>
+							<string key="candidateClassName">NSButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="singleMode">
+							<string key="name">singleMode</string>
+							<string key="candidateClassName">NSButton</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="songsController">
 							<string key="name">songsController</string>

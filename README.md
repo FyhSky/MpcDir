@@ -33,14 +33,14 @@ MPC implementation
   - listall
   - playlist
 
-MPC TODO
---------
-
-* Playback control
-  - stop
-
 * Mode switch
   - random
   - repeat
   - single
   - consume
+  
+MPC TODO
+--------
+
+* Playback control
+  - stop

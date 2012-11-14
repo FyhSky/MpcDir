@@ -30,6 +30,11 @@
     IBOutlet NSMenu* directoryMenu;
     
     IBOutlet NSTableView* songsView;
+    
+    IBOutlet NSButton* repeatMode;
+    IBOutlet NSButton* randomMode;
+    IBOutlet NSButton* singleMode;
+    IBOutlet NSButton* consumeMode;
 }
 
 @property (assign) IBOutlet NSWindow* window;
@@ -66,6 +71,13 @@
 - (IBAction) searchClick:(id)sender;
 - (IBAction) listClick:(id)sender;
 - (IBAction) playlistClick:(id)sender;
+
+// Mode switches
+// =============
+- (IBAction) randomClick:(id)sender;
+- (IBAction) repeatClick:(id)sender;
+- (IBAction) singleClick:(id)sender;
+- (IBAction) consumeClick:(id)sender;
 
 // Preferences actions
 // ===================

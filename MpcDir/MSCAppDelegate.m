@@ -74,6 +74,7 @@
         
         [songsView scrollRowToVisible:idx];
     }
+    [self updateStatus];
 }
 
 // Playback control
@@ -125,6 +126,29 @@
     isInPlaylist = TRUE;
 }
 
+// Mode switches
+// =============
+
+- (IBAction) randomClick:(id)sender {
+    [mpd random];
+    [self updateStatus];
+}
+
+- (IBAction) repeatClick:(id)sender {
+    [mpd repeat];
+    [self updateStatus];
+}
+
+- (IBAction) singleClick:(id)sender {
+    [mpd single];
+    [self updateStatus];
+}
+
+- (IBAction) consumeClick:(id)sender {
+    [mpd consume];
+    [self updateStatus];
+}
+
 // Preferences actions
 // ===================
 
@@ -160,7 +184,29 @@
 }
 
 - (void) updateStatus {
-    [statusField setTitle: [[mpd status] description]];
+    MSCStatus* status = [mpd status];
+    [statusField setTitle: status.description];
+    
+    if (status.repeat) {
+        repeatMode.title = @"RP";
+    } else {
+        repeatMode.title = @"rp";
+    }
+    if (status.random) {
+        randomMode.title = @"RN";
+    } else {
+        randomMode.title = @"rn";
+    }
+    if (status.single) {
+        singleMode.title = @"SI";
+    } else {
+        singleMode.title = @"si";
+    }
+    if (status.consume) {
+        consumeMode.title = @"CN";
+    } else {
+        consumeMode.title = @"cn";
+    }
 }
 
 - (MSCDir*) currentDirectory {
