@@ -1611,7 +1611,7 @@
 																		</object>
 																	</object>
 																	<object class="NSTextFieldCell" key="NSDataCell" id="114036043">
-																		<int key="NSCellFlags">337641536</int>
+																		<int key="NSCellFlags">69206081</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
 																		<reference key="NSSupport" ref="303312177"/>
@@ -1788,7 +1788,7 @@
 																		<reference key="NSTextColor" ref="113280109"/>
 																	</object>
 																	<object class="NSTextFieldCell" key="NSDataCell" id="281352051">
-																		<int key="NSCellFlags">337641536</int>
+																		<int key="NSCellFlags">69206081</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
 																		<reference key="NSSupport" ref="303312177"/>
@@ -1814,7 +1814,7 @@
 																		<reference key="NSTextColor" ref="113280109"/>
 																	</object>
 																	<object class="NSTextFieldCell" key="NSDataCell" id="718053247">
-																		<int key="NSCellFlags">337641536</int>
+																		<int key="NSCellFlags">69206081</int>
 																		<int key="NSCellFlags2">2048</int>
 																		<string key="NSContents">Text Cell</string>
 																		<reference key="NSSupport" ref="303312177"/>
@@ -3531,10 +3531,14 @@
 							<string key="NSLabel">value: arrangedObjects.name</string>
 							<string key="NSBinding">value</string>
 							<string key="NSKeyPath">arrangedObjects.name</string>
+							<dictionary key="NSOptions">
+								<boolean value="NO" key="NSAllowsEditingMultipleValuesSelection"/>
+								<boolean value="NO" key="NSConditionallySetsEditable"/>
+							</dictionary>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">1636</int>
+					<int key="connectionID">1639</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -7339,7 +7343,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1637</int>
+			<int key="maxID">1639</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
