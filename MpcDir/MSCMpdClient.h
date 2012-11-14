@@ -57,8 +57,11 @@ typedef id(^LineBlock)(NSString*);
 //   Playlist position is not forgotten.
 - (void) stop;
 
-// Pause/unpause current musical file.
+// Pause current musical file.
 - (void) pause;
+
+// Toggle pause/play mode.
+- (void) toggle;
 
 // Play next musical file in playlist.
 - (void) next;

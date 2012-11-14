@@ -59,6 +59,7 @@
 - (IBAction) playClick:(id)sender;
 - (IBAction) playPreviousClick:(id)sender;
 - (IBAction) playNextClick:(id)sender;
+- (IBAction) pauseClick:(id)sender;
 
 // Listings
 // ========

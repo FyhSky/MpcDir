@@ -66,6 +66,10 @@
     [self mpcrun: @"pause", nil];
 }
 
+- (void) toggle {
+    [self mpcrun: @"toggle", nil];
+}
+
 - (void) next {
     [self mpcrun: @"next", nil];
 }

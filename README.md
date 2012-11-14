@@ -26,6 +26,7 @@ MPC implementation
   - play
   - prev
   - next
+  - toggle
   
 * Listings
   - ls
@@ -36,7 +37,6 @@ MPC TODO
 --------
 
 * Playback control
-  - pause
   - stop
 
 * Mode switch

@@ -93,6 +93,10 @@
     [mpd next];
 }
 
+- (IBAction) pauseClick:(id)sender {
+    [mpd toggle];
+}
+
 // Listings
 // ========
 
