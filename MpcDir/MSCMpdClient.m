@@ -52,6 +52,9 @@
 // ================
 
 - (void) play: (NSUInteger)index {
+    if (index == NSNotFound) {
+        return;
+    }
     [self mpcrun: @"play", [NSString stringWithFormat: @"%ld", index + 1], nil];
 }
 

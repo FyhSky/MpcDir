@@ -81,10 +81,7 @@
 
 - (IBAction) playClick:(id)sender {
     if (isInPlaylist) {
-        NSUInteger index = [self.songsController selectionIndex];
-        if (index != NSNotFound) {
-            [mpd play: index];
-        }
+        [mpd play: [self currentSongIndex]];
     }
 }
 
@@ -170,6 +167,14 @@
     return [[self currentDirectory] path];
 }
 
+- (MSCDir*) currentSong {
+    return [self.songs objectAtIndex: self.songsController.selectionIndex];
+}
+
+- (NSUInteger) currentSongIndex {
+    return self.songsController.selectionIndex;
+}
+
 
 // MSCDirectoriesNavigating
 // ========================
@@ -198,6 +203,13 @@
     self.directories = [mpd ls: path withBlock:^(id dir) {
         return [MSCDir dirWithPath:dir];
     }];
+}
+
+// MSCSongsNavigating
+// ==================
+
+- (void) playSong {
+    [self playClick:nil];
 }
 
 @end
