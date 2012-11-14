@@ -167,8 +167,8 @@
 }
 
 
-// MSCDirectoriesDelegate
-// ======================
+// MSCDirectoriesNavigating
+// ========================
 
 - (void) viewDirectory {
     //NSLog(@"viewDirectory");

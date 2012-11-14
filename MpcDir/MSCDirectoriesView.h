@@ -7,11 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MSCDirectoriesDelegate.h"
+#import "MSCDirectoriesNavigating.h"
 
 @interface MSCDirectoriesView : NSTableView
 {
-    IBOutlet id<MSCDirectoriesDelegate> directoryDelegate;
+    IBOutlet id<MSCDirectoriesNavigating> directoryDelegate;
 }
 
 @end

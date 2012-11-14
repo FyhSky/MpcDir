@@ -11,10 +11,10 @@
 #import "MSCDir.h"
 #import "MSCPreferences.h"
 #import "NSArray+FP.h"
-#import "MSCDirectoriesDelegate.h"
+#import "MSCDirectoriesNavigating.h"
 
 
-@interface MSCAppDelegate : NSObject <NSApplicationDelegate, MSCDirectoriesDelegate>
+@interface MSCAppDelegate : NSObject <NSApplicationDelegate, MSCDirectoriesNavigating>
 {
     BOOL            isInPlaylist;
     MSCMpdClient*   mpd;

@@ -1565,7 +1565,7 @@
 															<string key="NSFrameSize">{492, 469}</string>
 															<reference key="NSSuperview" ref="10212837"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="856819910"/>
+															<reference key="NSNextKeyView" ref="13760958"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="1029038766">
@@ -1716,7 +1716,7 @@
 											<string key="NSFrame">{{0, 1}, {494, 487}}</string>
 											<reference key="NSSuperview" ref="1014865589"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="13760958"/>
+											<reference key="NSNextKeyView" ref="10212837"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="856819910"/>
@@ -1751,7 +1751,7 @@
 															<string key="NSFrameSize">{423, 469}</string>
 															<reference key="NSSuperview" ref="1031951900"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="121396221"/>
+															<reference key="NSNextKeyView" ref="876805897"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSTableHeaderView" key="NSHeaderView" id="380554079">
@@ -1872,7 +1872,6 @@
 													<string key="NSFrame">{{1, 470}, {403, 15}}</string>
 													<reference key="NSSuperview" ref="493701011"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<int key="NSsFlags">1</int>
 													<reference key="NSTarget" ref="493701011"/>
@@ -1898,7 +1897,7 @@
 											<string key="NSFrame">{{0, 1}, {425, 487}}</string>
 											<reference key="NSSuperview" ref="1024244564"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="876805897"/>
+											<reference key="NSNextKeyView" ref="1031951900"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133682</int>
 											<reference key="NSVScroller" ref="121396221"/>
@@ -2437,7 +2436,6 @@
 							<string key="NSFrame">{{83, 12}, {75, 32}}</string>
 							<reference key="NSSuperview" ref="991600358"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="284973373">
@@ -3487,14 +3485,6 @@
 						<reference key="destination" ref="830616159"/>
 					</object>
 					<int key="connectionID">1613</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">playClick:</string>
-						<reference key="source" ref="976324537"/>
-						<reference key="destination" ref="544716115"/>
-					</object>
-					<int key="connectionID">1614</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -7430,7 +7420,6 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="directoriesController">NSArrayController</string>
-						<string key="directoriesDelegate">id</string>
 						<string key="directoryMenu">NSMenu</string>
 						<string key="fileMenu">NSMenu</string>
 						<string key="formatMenu">NSMenu</string>
@@ -7446,10 +7435,6 @@
 						<object class="IBToOneOutletInfo" key="directoriesController">
 							<string key="name">directoriesController</string>
 							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="directoriesDelegate">
-							<string key="name">directoriesDelegate</string>
-							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="directoryMenu">
 							<string key="name">directoryMenu</string>
@@ -7519,8 +7504,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">NSDocument</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="browseDocumentVersions:">id</string>
-						<string key="moveDocumentToUbiquityContainer:">id</string>
 						<string key="printDocument:">id</string>
 						<string key="revertDocumentToSaved:">id</string>
 						<string key="runPageLayout:">id</string>
@@ -7529,14 +7512,6 @@
 						<string key="saveDocumentTo:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="browseDocumentVersions:">
-							<string key="name">browseDocumentVersions:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="moveDocumentToUbiquityContainer:">
-							<string key="name">moveDocumentToUbiquityContainer:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="printDocument:">
 							<string key="name">printDocument:</string>
 							<string key="candidateClassName">id</string>
