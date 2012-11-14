@@ -9,6 +9,8 @@
 #import <Cocoa/Cocoa.h>
 #import "MSCDirectoriesNavigating.h"
 
+#define MSCSpacebar 32
+
 // Simple table view but provides a way to
 //   handle key presses for directory navigation,
 //   and simulates click action after navigation events

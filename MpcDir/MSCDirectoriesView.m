@@ -24,38 +24,45 @@
 //
 - (void)keyDown:(NSEvent *)theEvent {
     
-    if ([theEvent modifierFlags] & NSNumericPadKeyMask) { // is arrow pressed ?
-        NSString* theArrow = [theEvent charactersIgnoringModifiers];
-        unichar    keyChar = 0;
-        
-        if ( [theArrow length] == 0 ) {
-            return;            // reject dead keys
-        }
-        if ( [theArrow length] == 1 ) {
-            keyChar = [theArrow characterAtIndex:0];
-            
-            if ( keyChar == NSLeftArrowFunctionKey ) {
-                [directoryDelegate goOutsideDirectory];
-                [self sendAction: self.action to:self.target];
-                return;
-            }
-            if ( keyChar == NSRightArrowFunctionKey ) {
-                [directoryDelegate goInsideDirectory];
-                [self sendAction: self.action to:self.target];
-                return;
-            }
-            
-            if ( keyChar == NSUpArrowFunctionKey || keyChar == NSDownArrowFunctionKey ) {
-                [super keyDown:theEvent];
-                [self sendAction: self.action to:self.target];
-                [directoryDelegate viewDirectory];
-                return;
-            }
-            [super keyDown:theEvent];
-        }
+    NSString* theArrow = [theEvent charactersIgnoringModifiers];
+    unichar   key = 0;
+    
+    if ( [theArrow length] == 0 ) {
+        return;            // reject dead keys
     }
     
-    [super keyDown:theEvent];
+    if ( [theArrow length] == 1 ) {
+        key = [theArrow characterAtIndex:0];
+            
+        if ( key == NSLeftArrowFunctionKey ||
+             key == NSDeleteCharacter )
+        {
+            [directoryDelegate goOutsideDirectory];
+            [self sendAction: self.action to:self.target];
+            return;
+        }
+        
+        if ( key == NSRightArrowFunctionKey ||
+             key == NSEnterCharacter ||
+             key == NSCarriageReturnCharacter ||
+             key == MSCSpacebar)
+        {
+            [directoryDelegate goInsideDirectory];
+            [self sendAction: self.action to:self.target];
+            return;
+        }
+        
+        if ( key == NSUpArrowFunctionKey ||
+             key == NSDownArrowFunctionKey )
+        {
+            [super keyDown:theEvent];
+            [self sendAction: self.action to:self.target];
+            [directoryDelegate viewDirectory];
+            return;
+        }
+        
+        [super keyDown:theEvent];
+    }
 }
 
 
