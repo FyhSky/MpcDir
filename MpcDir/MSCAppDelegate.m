@@ -23,7 +23,7 @@
     [rootMenu removeItemAtIndex: [rootMenu indexOfItemWithSubmenu:viewMenu]];
     [rootMenu removeItemAtIndex: [rootMenu indexOfItemWithSubmenu:formatMenu]];
     
-    preferences = [[MSCPreferences alloc] init];
+    preferences = [MSCPreferences preferences];
     mpd         = [MSCMpdClient mpd: preferences];
     
     [self.preferencesWindow orderOut:self];

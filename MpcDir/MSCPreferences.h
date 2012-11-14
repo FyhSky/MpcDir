@@ -19,6 +19,9 @@ FOUNDATION_EXPORT NSString *const MSC_PREFERENCES_PATH;
     NSUserDefaults* _prefs;
 }
 
+// Nice static constructor
++ (id)preferences;
+
 // Full path to mpc client
 - (NSString*) client;
 

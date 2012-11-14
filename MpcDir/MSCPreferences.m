@@ -12,8 +12,11 @@ NSString *const MSC_PREFERENCES_PATH = @"~/Library/Preferences/ru.massoc.MpcDir.
 
 @implementation MSCPreferences
 
-- (id)init
-{
++ (id)preferences {
+    return [[MSCPreferences alloc] init];
+}
+
+- (id)init {
     self = [super init];
     if (self) {
         NSMutableDictionary* defaults = [NSMutableDictionary new];
@@ -28,32 +31,27 @@ NSString *const MSC_PREFERENCES_PATH = @"~/Library/Preferences/ru.massoc.MpcDir.
 }
 
 // Full path to mpc client
-- (NSString*) client
-{
+- (NSString*) client {
     return [_prefs valueForKey:@"client"];
 }
 
 // IP-address or domain name of server where mpd is installed
-- (NSString*) host
-{
+- (NSString*) host {
     return [_prefs valueForKey:@"host"];
 }
 
 // Port on which mpd listens (nil for default)
-- (NSString*) port
-{
+- (NSString*) port {
     return [_prefs valueForKey:@"port"];
 }
 
 // Password to access mpd (nil for no password)
-- (NSString*) password
-{
+- (NSString*) password {
     return [_prefs valueForKey:@"password"];
 }
 
 
-- (void) reset
-{
+- (void) reset {
     [_prefs setObject:@"/opt/local/bin/mpc" forKey:@"client"];
     [_prefs setObject:@"localhost" forKey:@"host"];
     [_prefs setObject:nil forKey:@"port"];
