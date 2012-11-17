@@ -160,8 +160,10 @@
     
     NSData*   data  = [[tout fileHandleForReading] readDataToEndOfFile];
     NSString* str   = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    str = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     NSArray* result = [str componentsSeparatedByString:@"\n"];
     NSArray* finalResult = [result map: block];
+//    finalResult = [finalResult sliceAt:0 ofLength:[finalResult count] - 1];
     
     [task waitUntilExit];
     
