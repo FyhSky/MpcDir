@@ -16,6 +16,8 @@
 @synthesize directoriesController;
 @synthesize preferences;
 
+@synthesize isInPlaylist;
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     NSMenu* rootMenu = [NSApp mainMenu];
@@ -80,7 +82,7 @@
 // ================
 
 - (IBAction) playClick:(id)sender {
-    if (isInPlaylist) {
+    if (self.isInPlaylist) {
         [mpd play: [self currentSongIndex]];
     }
 }
@@ -115,14 +117,14 @@
     self.songs = [mpd listall: path withBlock:^(id song) {
         return [MSCDir dirWithPath:song];
     }];
-    isInPlaylist = FALSE;
+    self.isInPlaylist = NO;
 }
 
 - (IBAction) playlistClick:(id)sender {
     self.songs = [mpd playlist:^(id data) {
         return [MSCSong songWithData:data];
     }];
-    isInPlaylist = TRUE;
+    self.isInPlaylist = YES;
 }
 
 // Mode switches
@@ -217,7 +219,8 @@
 }
 
 - (MSCSong*) currentSong {
-    return [self.songs objectAtIndex: self.songsController.selectionIndex];
+    return self.songsController.selection;
+//    return [self.songs objectAtIndex: self.songsController.selectionIndex];
 }
 
 - (NSString*) currentSongIndex {

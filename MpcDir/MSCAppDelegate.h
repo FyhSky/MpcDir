@@ -18,7 +18,6 @@
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate, MSCDirectoriesNavigating>
 {
-    BOOL            isInPlaylist;
     MSCMpdClient*   mpd;
     NSTimer*        statusTimer;
     
@@ -36,6 +35,8 @@
     IBOutlet NSButton* singleMode;
     IBOutlet NSButton* consumeMode;
 }
+
+@property BOOL isInPlaylist;
 
 @property (assign) IBOutlet NSWindow* window;
 @property (assign) IBOutlet NSWindow* preferencesWindow;

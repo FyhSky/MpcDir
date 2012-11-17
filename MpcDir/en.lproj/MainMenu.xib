@@ -3871,6 +3871,29 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
+						<string key="label">hidden: self.isInPlaylist</string>
+						<reference key="source" ref="561593363"/>
+						<reference key="destination" ref="976324537"/>
+						<object class="NSNibBindingConnector" key="connector">
+							<reference key="NSSource" ref="561593363"/>
+							<reference key="NSDestination" ref="976324537"/>
+							<string key="NSLabel">hidden: self.isInPlaylist</string>
+							<string key="NSBinding">hidden</string>
+							<string key="NSKeyPath">self.isInPlaylist</string>
+							<dictionary key="NSOptions">
+								<integer value="1" key="NSMultipleValuesPlaceholder"/>
+								<integer value="1" key="NSNoSelectionPlaceholder"/>
+								<integer value="1" key="NSNotApplicablePlaceholder"/>
+								<integer value="1" key="NSNullPlaceholder"/>
+								<string key="NSValueTransformerName">NSNegateBoolean</string>
+							</dictionary>
+							<int key="NSNibBindingConnectorVersion">2</int>
+						</object>
+					</object>
+					<int key="connectionID">1757</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.title</string>
 						<reference key="source" ref="634568925"/>
 						<reference key="destination" ref="571111303"/>
@@ -8329,7 +8352,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">1743</int>
+			<int key="maxID">1757</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -8438,7 +8461,6 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="consumeMode">NSButton</string>
 						<string key="directoriesController">NSArrayController</string>
-						<string key="directoryMenu">NSMenu</string>
 						<string key="fileMenu">NSMenu</string>
 						<string key="formatMenu">NSMenu</string>
 						<string key="patternField">NSTextField</string>
@@ -8460,10 +8482,6 @@
 						<object class="IBToOneOutletInfo" key="directoriesController">
 							<string key="name">directoriesController</string>
 							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="directoryMenu">
-							<string key="name">directoryMenu</string>
-							<string key="candidateClassName">NSMenu</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="fileMenu">
 							<string key="name">fileMenu</string>
