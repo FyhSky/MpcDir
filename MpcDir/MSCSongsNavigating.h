@@ -8,14 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-// Songs navigation protocol
-//   provides a way to handle navigation key presses
-//   in songs view (right pane)
-//
+/// Songs navigation protocol
+///   provides a way to handle navigation key presses
+///   in songs view (right pane)
+///
 @protocol MSCSongsNavigating <NSObject>
 @required
 
-// Play selected song
+/// Play selected song
 - (void) playSong;
 
 @end

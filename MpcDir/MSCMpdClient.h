@@ -15,9 +15,10 @@ typedef id(^LineBlock)(NSString*);
 
 @interface MSCMpdClient : NSObject
 
+/// Preferences are used to connect to mpd (@host, @port, @password etc...)
 @property (readwrite,retain) MSCPreferences* preferences;
 
-// Counstructors
+// Constructors
 // =============
 
 // Initialize client instance with preferences.
@@ -26,65 +27,65 @@ typedef id(^LineBlock)(NSString*);
 // Playlist management
 // ===================
 
-// Add path to playlist.
-//   Path should be relative to your musical directory
-//   and can represent a single musical file or a whole directory.
+/// Add path to playlist.
+///   Path should be relative to your musical directory
+///   and can represent a single musical file or a whole directory.
 - (void) add: (NSString*)path;
 
-// Clear playlist.
+/// Clear playlist.
 - (void) clear;
 
 // Status detection
 // ================
 
-// Get status from server.
+/// Get status from server.
 - (MSCStatus*) status;
 
-// Get currently playing musical file.
+/// Get currently playing musical file.
 - (NSString*) current;
 
 
 // Playback control
 // ================
 
-// Play musical file by index in playlist.
-//   Index should be zero-based.
-//   (MPD uses 1-bazed indices, so this function will
-//   increment passed index before sending to server).
+/// Play musical file by index in playlist.
+///   Index should be zero-based.
+///   (MPD uses 1-bazed indices, so this function will
+///   increment passed index before sending to server).
 - (void) play: (NSUInteger)index;
 
-// Stop playing musical file.
-//   Playlist position is not forgotten.
+/// Stop playing musical file.
+///   Playlist position is not forgotten.
 - (void) stop;
 
-// Pause current musical file.
+/// Pause current musical file.
 - (void) pause;
 
-// Toggle pause/play mode.
+/// Toggle pause/play mode.
 - (void) toggle;
 
-// Play next musical file in playlist.
+/// Play next musical file in playlist.
 - (void) next;
 
-// Play previous musical file in playlist.
+/// Play previous musical file in playlist.
 - (void) previous;
 
 
 // Listings
 // ========
 
-// List all musical files and directories in path.
-//   Path should be relative to your musical directory.
-//   Performs block on every musical file and returns list of results.
+/// List all musical files and directories in @path.
+///   Path should be relative to your musical directory.
+///   Performs @block on every musical file and returns list of results.
 - (NSArray*) ls:(NSString*)path withBlock:(LineBlock)block;
 
-// List all musical files in path recursively.
-//   Path should be relative to your musical directory.
-//   Performs block on every musical file and returns list of results.
+/// List all musical files in @path recursively.
+///   Path should be relative to your musical directory.
+///   Performs @block on every musical file and returns list of results.
 - (NSArray*) listall:(NSString*)path withBlock:(LineBlock)block;
 
-// List all musical files in your playlist.
-//   Performs block on every musical file and returns list of results.
+/// List all musical files in your playlist.
+///   Performs @block on every musical file and returns list of results.
 - (NSArray*) playlist:(LineBlock)block;
 
 
@@ -92,16 +93,16 @@ typedef id(^LineBlock)(NSString*);
 // Mode switches
 // =============
 
-// Randomize playing inside playlist.
+/// Randomize playing inside playlist.
 - (void) random;
 
-// Repeat one song (in single mode) or all playlist.
+/// Repeat one song (in single mode) or all playlist.
 - (void) repeat;
 
-// Play song once (if repeat is off) or play it indefinitely.
+/// Play song once (if repeat is off) or play it indefinitely.
 - (void) single;
 
-// Delete song from playlist when going to next song.
+/// Delete song from playlist when going to next song.
 - (void) consume;
 
 @end

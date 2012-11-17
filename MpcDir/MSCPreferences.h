@@ -8,32 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
-// Path to save preferences of this application
+/// Path to save preferences of this application
 FOUNDATION_EXPORT NSString *const MSC_PREFERENCES_PATH;
 
-// ******************************
-// Preferences of client software
-// ******************************
+/// Preferences of client software
+///
 @interface MSCPreferences : NSObject
 {
     NSUserDefaults* _prefs;
 }
 
-// Nice static constructor
+/// Nice static @constructor
 + (id)preferences;
 
-// Full path to mpc client
+/// Full path to mpc @client
 - (NSString*) client;
 
-// IP-address or domain name of server where mpd is installed
+/// @IP-address or @domain-name of server where mpd is installed
 - (NSString*) host;
 
-// Port on which mpd listens (nil for default)
+/// @Port on which mpd listens (nil for default)
 - (NSString*) port;
 
-// Password to access mpd (nil for no password)
+/// @Password to access mpd (nil for no password)
 - (NSString*) password;
 
+/// @Reset all settings to their default values
 - (void) reset;
 
 @end

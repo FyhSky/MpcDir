@@ -12,7 +12,7 @@
 
 @synthesize preferences;
 
-// Counstructors
+// Constructors
 // =============
 
 + (id) mpd: (MSCPreferences*)prefs
