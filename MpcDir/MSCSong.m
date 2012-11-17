@@ -15,18 +15,19 @@
 @synthesize artist;
 @synthesize title;
 @synthesize album;
-@synthesize year;
+@synthesize file;
 
 + (MSCSong*) songWithData:(NSString *)data {
     MSCSong* song = [[MSCSong alloc] init];
     if (song) {
         song.data = data;
         NSArray* tags = [data componentsSeparatedByString:@"@@@"];
-        if (tags.count > 3) {
+        if (tags.count > 4) {
             song.position = tags[0];
             song.artist = tags[1];
             song.title = tags[2];
             song.album = tags[3];
+            song.file = tags[4];
         }
     }
     return song;
@@ -51,7 +52,11 @@
 }
 
 - (NSString*) description {
-    return [NSString stringWithFormat:@"%@ - %@", self.artist, self.title];
+    if (self.title.length > 0 && self.artist.length > 0) {
+        return [NSString stringWithFormat:@"%@ - %@", self.artist, self.title];
+    } else {
+        return self.file;
+    }
 }
 
 @end

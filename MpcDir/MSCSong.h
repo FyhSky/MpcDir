@@ -17,7 +17,7 @@ typedef void (^FindBlock) (NSUInteger);
 @property NSString* title;
 @property NSString* artist;
 @property NSString* album;
-@property NSString* year;
+@property NSString* file;
 
 + (MSCSong*) songWithData: (NSString*)data;
 - (NSUInteger) findMeIn:(NSArray*) songs;

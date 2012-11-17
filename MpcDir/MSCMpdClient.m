@@ -8,7 +8,7 @@
 
 #import "MSCMpdClient.h"
 
-NSString *const MSC_MPD_FORMAT = @"%position%@@@%artist%@@@%title%@@@%album%@@@";
+NSString *const MSC_MPD_FORMAT = @"%position%@@@%artist%@@@%title%@@@%album%@@@%file%";
 
 @implementation MSCMpdClient
 
