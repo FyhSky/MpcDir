@@ -9,17 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface MSCDir : NSObject
-{
-    NSString* _name;
-    NSString* _path;
-}
+
+@property NSString* name;
+@property NSString* path;
 
 + (MSCDir*) dirWithName: (NSString*)aName andPath: (NSString*)aPath;
 + (MSCDir*) dirWithName: (NSString*)aName;
 + (MSCDir*) dirWithPath: (NSString*)aPath;
-
-- (NSString*) name;
-- (NSString*) path;
-- (void) setName:(NSString*)aName withPath:(NSString*)aPath;
 
 @end

@@ -10,9 +10,8 @@
 
 @implementation MSCDir
 
-- (NSString*) name { return _name; }
-- (NSString*) path { return _path; }
-
+@synthesize name;
+@synthesize path;
 
 + (MSCDir*) dirWithName: (NSString*)aName andPath: (NSString*)aPath
 {
@@ -33,8 +32,8 @@
 
 - (void) setName:(NSString*)aName withPath:(NSString*)aPath
 {
-    _name = aName;
-    _path = aPath;
+    self.name = aName;
+    self.path = aPath;
 }
 
 - (BOOL) isEqual:(id)other {
@@ -51,5 +50,12 @@
     return [[self name] hash];
 }
 
+- (NSString*) description {
+    return self.name;
+}
+
+- (id)valueForUndefinedKey: (NSString*) key {
+    return @"";
+}
 
 @end

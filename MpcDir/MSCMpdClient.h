@@ -13,6 +13,9 @@
 
 typedef id(^LineBlock)(NSString*);
 
+/// MPD output format string
+FOUNDATION_EXPORT NSString *const MSC_MPD_FORMAT;
+
 @interface MSCMpdClient : NSObject
 
 /// Preferences are used to connect to mpd (@host, @port, @password etc...)
@@ -52,7 +55,7 @@ typedef id(^LineBlock)(NSString*);
 ///   Index should be zero-based.
 ///   (MPD uses 1-bazed indices, so this function will
 ///   increment passed index before sending to server).
-- (void) play: (NSUInteger)index;
+- (void) play: (NSString*)position;
 
 /// Stop playing musical file.
 ///   Playlist position is not forgotten.

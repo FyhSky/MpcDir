@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F7217D22164EA1340023E1AF /* MSCPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = F7217D21164EA1340023E1AF /* MSCPreferences.m */; };
+		F726C2571657CAF700C0A91C /* MSCSong.m in Sources */ = {isa = PBXBuildFile; fileRef = F726C2561657CAF700C0A91C /* MSCSong.m */; };
 		F74D6FE51651ABD800BA849A /* NSArray+FP.m in Sources */ = {isa = PBXBuildFile; fileRef = F74D6FE41651ABD800BA849A /* NSArray+FP.m */; };
 		F7914C77164FA08A0060ECCB /* MSCStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = F7914C76164FA08A0060ECCB /* MSCStatus.m */; };
 		F793062F163D244B006BE992 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F793062E163D244B006BE992 /* Cocoa.framework */; };
@@ -40,6 +41,8 @@
 /* Begin PBXFileReference section */
 		F7217D20164EA1340023E1AF /* MSCPreferences.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCPreferences.h; sourceTree = "<group>"; };
 		F7217D21164EA1340023E1AF /* MSCPreferences.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCPreferences.m; sourceTree = "<group>"; };
+		F726C2551657CAF700C0A91C /* MSCSong.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCSong.h; sourceTree = "<group>"; };
+		F726C2561657CAF700C0A91C /* MSCSong.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCSong.m; sourceTree = "<group>"; };
 		F74D6FE31651ABD800BA849A /* NSArray+FP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FP.h"; sourceTree = "<group>"; };
 		F74D6FE41651ABD800BA849A /* NSArray+FP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FP.m"; sourceTree = "<group>"; };
 		F789C6671652E4F1000BA336 /* MSCDirectoriesNavigating.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCDirectoriesNavigating.h; sourceTree = "<group>"; };
@@ -146,8 +149,6 @@
 				F7930640163D244B006BE992 /* MSCAppDelegate.h */,
 				F7930641163D244B006BE992 /* MSCAppDelegate.m */,
 				F7930643163D244B006BE992 /* MainMenu.xib */,
-				F7930662163D2769006BE992 /* MSCDir.h */,
-				F7930663163D2769006BE992 /* MSCDir.m */,
 				F7C538D5163F0E8E00253FDB /* MSCMpdClient.h */,
 				F7C538D6163F0E8E00253FDB /* MSCMpdClient.m */,
 				F7217D20164EA1340023E1AF /* MSCPreferences.h */,
@@ -197,6 +198,8 @@
 				F789C6671652E4F1000BA336 /* MSCDirectoriesNavigating.h */,
 				F7C3ACB01652CB2600742E8F /* MSCDirectoriesView.h */,
 				F7C3ACB11652CB2600742E8F /* MSCDirectoriesView.m */,
+				F7930662163D2769006BE992 /* MSCDir.h */,
+				F7930663163D2769006BE992 /* MSCDir.m */,
 			);
 			name = Directories;
 			sourceTree = "<group>";
@@ -207,6 +210,8 @@
 				F7A5EDBF165416A7005FF1DB /* MSCSongsNavigating.h */,
 				F7A5EDBC16541614005FF1DB /* MSCSongsView.h */,
 				F7A5EDBD16541614005FF1DB /* MSCSongsView.m */,
+				F726C2551657CAF700C0A91C /* MSCSong.h */,
+				F726C2561657CAF700C0A91C /* MSCSong.m */,
 			);
 			name = Songs;
 			sourceTree = "<group>";
@@ -330,6 +335,7 @@
 				F74D6FE51651ABD800BA849A /* NSArray+FP.m in Sources */,
 				F7C3ACB21652CB2600742E8F /* MSCDirectoriesView.m in Sources */,
 				F7A5EDBE16541614005FF1DB /* MSCSongsView.m in Sources */,
+				F726C2571657CAF700C0A91C /* MSCSong.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

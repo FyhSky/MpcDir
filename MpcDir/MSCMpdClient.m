@@ -8,6 +8,8 @@
 
 #import "MSCMpdClient.h"
 
+NSString *const MSC_MPD_FORMAT = @"%position%@@@%artist%@@@%title%@@@%album%@@@";
+
 @implementation MSCMpdClient
 
 @synthesize preferences;
@@ -41,21 +43,19 @@
 // ================
 
 - (MSCStatus*) status {
-    return [MSCStatus statusWithArray: [self mpcquery:@"status", nil]];
+    return [MSCStatus statusWithArray:
+            [self mpcquery:@"status", @"--format", MSC_MPD_FORMAT, nil]];
 }
 
 - (NSString*) current {
-    return [self mpcrun: @"current", nil];
+    return [self mpcrun: @"current", @"--format", MSC_MPD_FORMAT, nil];
 }
 
 // Playback control
 // ================
 
-- (void) play: (NSUInteger)index {
-    if (index == NSNotFound) {
-        return;
-    }
-    [self mpcrun: @"play", [NSString stringWithFormat: @"%ld", index + 1], nil];
+- (void) play: (NSString*)position {
+    [self mpcrun: @"play", position, nil];
 }
 
 - (void) stop {
@@ -90,7 +90,11 @@
 }
 
 - (NSArray*) playlist:(LineBlock)block {
-    return [self mpcdo: block withArgs: @"playlist", nil];
+    return [self mpcdo: block withArgs:
+            @"playlist",
+            @"--format",
+            MSC_MPD_FORMAT,
+            nil];
 }
 
 // Mode switches

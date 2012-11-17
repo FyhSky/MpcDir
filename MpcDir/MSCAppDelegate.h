@@ -13,6 +13,7 @@
 #import "NSArray+FP.h"
 #import "MSCDirectoriesNavigating.h"
 #import "MSCSongsNavigating.h"
+#import "MSCSong.h"
 
 
 @interface MSCAppDelegate : NSObject <NSApplicationDelegate, MSCDirectoriesNavigating>

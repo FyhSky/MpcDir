@@ -68,11 +68,10 @@
     MSCStatus* status = [mpd status];
     [statusField setTitle: [status description]];
     
-    NSUInteger idx = [[self songs] indexOfObject: [MSCDir dirWithName:[status title]]];
-    if (idx != NSNotFound) {
-        [[self songsController] setSelectionIndex:idx];
-        
-        [songsView scrollRowToVisible:idx];
+    NSUInteger index = [status.song findMeIn:self.songs];
+    if (index != NSNotFound) {
+        self.songsController.selectionIndex = index;
+        [songsView scrollRowToVisible:index];
     }
     [self updateStatus];
 }
@@ -120,8 +119,8 @@
 }
 
 - (IBAction) playlistClick:(id)sender {
-    self.songs = [mpd playlist:^(id song) {
-        return [MSCDir dirWithPath:song];
+    self.songs = [mpd playlist:^(id data) {
+        return [MSCSong songWithData:data];
     }];
     isInPlaylist = TRUE;
 }
@@ -217,12 +216,12 @@
     return [[self currentDirectory] path];
 }
 
-- (MSCDir*) currentSong {
+- (MSCSong*) currentSong {
     return [self.songs objectAtIndex: self.songsController.selectionIndex];
 }
 
-- (NSUInteger) currentSongIndex {
-    return self.songsController.selectionIndex;
+- (NSString*) currentSongIndex {
+    return [[self currentSong] position];
 }
 
 

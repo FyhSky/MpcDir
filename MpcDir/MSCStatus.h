@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "MSCSong.h"
 
 typedef enum {
     MSC_STATUS_PLAYING,
@@ -18,7 +19,7 @@ typedef enum {
 @interface MSCStatus : NSObject
 
 @property MSCStatusType status;
-@property NSString* title;
+@property MSCSong* song;
 @property NSUInteger playlistIndex;
 @property NSUInteger playlistLength;
 @property BOOL repeat;

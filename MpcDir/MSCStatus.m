@@ -30,7 +30,7 @@
 @implementation MSCStatus
 
 @synthesize status;
-@synthesize title;
+@synthesize song;
 @synthesize playlistIndex;
 @synthesize playlistLength;
 @synthesize repeat;
@@ -47,13 +47,13 @@
         
         if (data.count <= 2) {
             modeLine = data[0];
-            st.title = @"";
+            st.song = nil;
             st.status = MSC_STATUS_STOPPED;
             st.playlistIndex = 0;
             st.playlistLength = 0;
         } else {
             modeLine = data[2];
-            st.title = data[0];
+            st.song = [MSCSong songWithData:data[0]];
             
             if ([data[1] rangeOfString: @"[playing]"].location != NSNotFound) {
                 st.status = MSC_STATUS_PLAYING;
@@ -87,9 +87,9 @@
     if (self.status == MSC_STATUS_STOPPED) {
         return @"stopped";
     } else if (self.status == MSC_STATUS_PLAYING) {
-        return [NSString stringWithFormat:@"Now playing: %@", self.title];
+        return [NSString stringWithFormat:@"Now playing: %@", self.song];
     } else if (self.status == MSC_STATUS_PAUSED) {
-        return [NSString stringWithFormat:@"Paused on: %@", self.title];
+        return [NSString stringWithFormat:@"Paused on: %@", self.song];
     } else {
         return @"unknown status";
     }
