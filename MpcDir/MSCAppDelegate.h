@@ -28,7 +28,6 @@
     IBOutlet NSMenu* fileMenu;
     IBOutlet NSMenu* formatMenu;
     IBOutlet NSMenu* viewMenu;
-    IBOutlet NSMenu* directoryMenu;
     
     IBOutlet NSTableView* songsView;
     
