@@ -211,7 +211,7 @@
 }
 
 - (MSCDir*) currentDirectory {
-    return [self.directories objectAtIndex: self.directoriesController.selectionIndex];
+    return self.directoriesController.selectedObjects[0];
 }
 
 - (NSString*) currentDirectoryPath {
@@ -219,8 +219,7 @@
 }
 
 - (MSCSong*) currentSong {
-//    return self.songsController.selection;
-    return [self.songs objectAtIndex: self.songsController.selectionIndex];
+    return self.songsController.selectedObjects[0];
 }
 
 - (NSString*) currentSongIndex {
