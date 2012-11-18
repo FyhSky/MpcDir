@@ -36,6 +36,18 @@
     self.path = aPath;
 }
 
+- (MSCDir*) parent {
+    NSString* newPath = @"";
+    NSArray* components = [self.path pathComponents];
+    
+    if (components.count > 1) {
+        newPath = [[components sliceAt:0
+                              ofLength:components.count - 2] stringByJoiningPathComponents];
+    }
+    
+    return [MSCDir dirWithPath:newPath];
+}
+
 - (BOOL) isEqual:(id)other {
     if ([other isKindOfClass:[MSCDir class]]) {
         return [[self name] isEqual: [other name]];

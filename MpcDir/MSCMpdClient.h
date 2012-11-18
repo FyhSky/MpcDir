@@ -10,8 +10,10 @@
 #import "MSCPreferences.h"
 #import "MSCStatus.h"
 #import "NSArray+FP.h"
+#import "MSCDir.h"
 
 typedef id(^LineBlock)(NSString*);
+typedef id(^DirBlock)(MSCDir*);
 
 /// MPD output format string
 FOUNDATION_EXPORT NSString *const MSC_MPD_FORMAT;
@@ -77,19 +79,17 @@ FOUNDATION_EXPORT NSString *const MSC_MPD_FORMAT;
 // Listings
 // ========
 
-/// List all musical files and directories in @path.
-///   Path should be relative to your musical directory.
-///   Performs @block on every musical file and returns list of results.
-- (NSArray*) ls:(NSString*)path withBlock:(LineBlock)block;
+/// List all musical files and directories in @dir.
+///   @dir.path should be relative to your musical directory.
+- (NSArray*) ls:(MSCDir*)dir;
 
-/// List all musical files in @path recursively.
-///   Path should be relative to your musical directory.
-///   Performs @block on every musical file and returns list of results.
-- (NSArray*) listall:(NSString*)path withBlock:(LineBlock)block;
+/// List all musical files in @dir recursively.
+///   @dir.path should be relative to your musical directory.
+- (NSArray*) listall:(MSCDir*)dir;
 
 /// List all musical files in your playlist.
 ///   Performs @block on every musical file and returns list of results.
-- (NSArray*) playlist:(LineBlock)block;
+- (NSArray*) playlist;
 
 
 

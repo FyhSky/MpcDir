@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSArray+FP.h"
 
 @interface MSCDir : NSObject
 
@@ -16,5 +17,7 @@
 + (MSCDir*) dirWithName: (NSString*)aName andPath: (NSString*)aPath;
 + (MSCDir*) dirWithName: (NSString*)aName;
 + (MSCDir*) dirWithPath: (NSString*)aPath;
+
+- (MSCDir*) parent;
 
 @end

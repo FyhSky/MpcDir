@@ -81,20 +81,19 @@ NSString *const MSC_MPD_FORMAT = @"%position%@@@%artist%@@@%title%@@@%album%@@@%
 // Listings
 // ========
 
-- (NSArray*) ls:(NSString*)path withBlock:(LineBlock)block {
-    return [self mpcdo: block withArgs: @"ls", path, nil];
+- (NSArray*) ls:(MSCDir*)dir {
+    return [self mpcdo: ^(id path) { return [MSCDir dirWithPath:path]; }
+              withArgs: @"ls", [dir path], nil];
 }
 
-- (NSArray*) listall:(NSString*)path withBlock:(LineBlock)block {
-    return [self mpcdo: block withArgs: @"listall", path, nil];
+- (NSArray*) listall:(MSCDir*)dir {
+    return [self mpcdo: ^(id path) { return [MSCDir dirWithPath:path]; }
+              withArgs: @"listall", [dir path], nil];
 }
 
-- (NSArray*) playlist:(LineBlock)block {
-    return [self mpcdo: block withArgs:
-            @"playlist",
-            @"--format",
-            MSC_MPD_FORMAT,
-            nil];
+- (NSArray*) playlist {
+    return [self mpcdo: ^(id data) { return [MSCSong songWithData:data]; }
+              withArgs: @"playlist", @"--format", MSC_MPD_FORMAT, nil];
 }
 
 // Mode switches
@@ -154,7 +153,7 @@ NSString *const MSC_MPD_FORMAT = @"%position%@@@%artist%@@@%title%@@@%album%@@@%
     NSTask* task = [[NSTask alloc] init];
     NSPipe* tout = [NSPipe pipe];
     
-    //NSLog(@"mpcquery: %@", args);
+    //NSLog(@"mpcdo: %@", args);
     
     [task setLaunchPath: preferences.client];
     [task setArguments: args];

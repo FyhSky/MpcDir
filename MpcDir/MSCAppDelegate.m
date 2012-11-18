@@ -43,7 +43,7 @@
 // ===================
 
 - (IBAction) addClick:(id)sender {
-    [mpd add: [self currentDirectoryPath]];
+    [mpd add: [[self currentDirectory] path]];
     [self playlistClick: nil];
 }
 
@@ -83,7 +83,7 @@
 
 - (IBAction) playClick:(id)sender {
     if (self.isInPlaylist) {
-        [mpd play: [self currentSongIndex]];
+        [mpd play: [[self currentSong] position]];
     }
 }
 
@@ -103,27 +103,21 @@
 // ========
 
 - (IBAction) searchClick:(id)sender {
-    self.directories = [mpd ls: [patternField stringValue] withBlock:^(id dir) {
-        return [MSCDir dirWithPath:dir];
-    }];
+    self.directories = [mpd ls: [MSCDir dirWithPath:[patternField stringValue]]];
     [self.window makeFirstResponder: patternField];
 }
 
 - (IBAction) listClick:(id)sender {
-    NSString* path = [self currentDirectoryPath];
+    MSCDir* dir = [self currentDirectory];
     
-    [patternField setStringValue: path];
+    [patternField setStringValue: [dir path]];
     
-    self.songs = [mpd listall: path withBlock:^(id song) {
-        return [MSCDir dirWithPath:song];
-    }];
+    self.songs = [mpd listall: dir];
     self.isInPlaylist = NO;
 }
 
 - (IBAction) playlistClick:(id)sender {
-    self.songs = [mpd playlist:^(id data) {
-        return [MSCSong songWithData:data];
-    }];
+    self.songs = [mpd playlist];
     self.isInPlaylist = YES;
 }
 
@@ -214,16 +208,8 @@
     return self.directoriesController.selectedObjects[0];
 }
 
-- (NSString*) currentDirectoryPath {
-    return [[self currentDirectory] path];
-}
-
 - (MSCSong*) currentSong {
     return self.songsController.selectedObjects[0];
-}
-
-- (NSString*) currentSongIndex {
-    return [[self currentSong] position];
 }
 
 
@@ -235,25 +221,11 @@
 }
 
 - (void) goInsideDirectory {
-    self.directories = [mpd ls: [self currentDirectoryPath] withBlock:^(id dir) {
-        return [MSCDir dirWithPath:dir];
-    }];
+    self.directories = [mpd ls: [self currentDirectory]];
 }
 
 - (void) goOutsideDirectory {
-    NSString*      path = [self currentDirectoryPath];
-    NSArray* components = [path pathComponents];
-    
-    if (components.count > 1) {
-        path = [[components sliceAt:0
-                           ofLength:components.count - 2] stringByJoiningPathComponents];
-    } else {
-        path = @"";
-    }
-    
-    self.directories = [mpd ls: path withBlock:^(id dir) {
-        return [MSCDir dirWithPath:dir];
-    }];
+    self.directories = [mpd ls: [[self currentDirectory] parent]];
 }
 
 // MSCSongsNavigating
