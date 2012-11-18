@@ -42,10 +42,14 @@
     
     if (components.count > 1) {
         newPath = [[components sliceAt:0
-                              ofLength:components.count - 2] stringByJoiningPathComponents];
+                              ofLength:components.count - 1] stringByJoiningPathComponents];
     }
     
     return [MSCDir dirWithPath:newPath];
+}
+
+- (NSUInteger) findMeIn:(NSArray*) directories {
+    return [directories indexOfObject: self];
 }
 
 - (BOOL) isEqual:(id)other {

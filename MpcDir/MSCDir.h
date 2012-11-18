@@ -19,5 +19,6 @@
 + (MSCDir*) dirWithPath: (NSString*)aPath;
 
 - (MSCDir*) parent;
+- (NSUInteger) findMeIn:(NSArray*) directories;
 
 @end

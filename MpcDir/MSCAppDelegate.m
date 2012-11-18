@@ -225,7 +225,13 @@
 }
 
 - (void) goOutsideDirectory {
-    self.directories = [mpd ls: [[self currentDirectory] parent]];
+    MSCDir* parent = [[self currentDirectory] parent];
+    self.directories = [mpd ls: [parent parent]];
+    NSUInteger index = [parent findMeIn:self.directories];
+    if (index != NSNotFound) {
+        self.directoriesController.selectionIndex = index;
+    }
+    
 }
 
 // MSCSongsNavigating
