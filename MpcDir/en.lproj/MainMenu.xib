@@ -3963,29 +3963,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">hidden: self.isInPlaylist</string>
-						<reference key="source" ref="268030020"/>
-						<reference key="destination" ref="976324537"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="268030020"/>
-							<reference key="NSDestination" ref="976324537"/>
-							<string key="NSLabel">hidden: self.isInPlaylist</string>
-							<string key="NSBinding">hidden</string>
-							<string key="NSKeyPath">self.isInPlaylist</string>
-							<dictionary key="NSOptions">
-								<integer value="1" key="NSMultipleValuesPlaceholder"/>
-								<integer value="1" key="NSNoSelectionPlaceholder"/>
-								<integer value="1" key="NSNotApplicablePlaceholder"/>
-								<integer value="1" key="NSNullPlaceholder"/>
-								<string key="NSValueTransformerName">NSNegateBoolean</string>
-							</dictionary>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">1907</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: selection.file</string>
 						<reference key="source" ref="934597413"/>
 						<reference key="destination" ref="571111303"/>
