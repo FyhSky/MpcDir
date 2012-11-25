@@ -28,15 +28,49 @@
     preferences = [MSCPreferences preferences];
     mpd         = [MSCMpdClient mpd: preferences];
     
-    if ([mpd test]) {
-        NSLog(@"ok");
-    } else {
-        NSLog(@"no connection");
-        return;
-    }
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        if ([self testConnection] == YES) {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self testConnectionSuccess];
+            });
+        } else {
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [self testConnectionFail];
+            });
+        }
+    });
+}
+
+- (BOOL) testConnection {
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [self.preferencesWindow orderOut:self];
     
-    [self.preferencesWindow orderOut:self];
+        NSRect pos = [self.window frame];
+        NSRect old = [self.connectingWindow frame];
+    
+        // center owner
+        old.origin.x = pos.origin.x + (pos.size.width / 2) - (old.size.width / 2);
+        old.origin.y = pos.origin.y + (pos.size.height / 2) - (old.size.height / 2);
+    
+        [self.connectingWindow setFrame:old display:YES];
+        [self.connectingWindow makeKeyAndOrderFront:self];
+        [connectingLevel startAnimation:self];
+    });
+    
+    BOOL result = [mpd test];
+    
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        [connectingLevel stopAnimation:self];
+        [self.connectingWindow orderOut:self];
+    });
+    
+    return result;
+}
+
+- (void) testConnectionSuccess {
+    NSLog(@"ok");
     [self.window makeFirstResponder: patternField];
+    [self.preferencesWindow orderOut:self];
     [self statusClick: nil];
     
     statusTimer = [NSTimer scheduledTimerWithTimeInterval:15
@@ -45,6 +79,12 @@
                                                  userInfo:nil
                                                   repeats:YES];
 }
+
+- (void) testConnectionFail {
+    NSLog(@"no connection");
+    [self showPreferences: nil];
+}
+
 
 // Playlist management
 // ===================

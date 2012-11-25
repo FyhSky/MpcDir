@@ -34,12 +34,15 @@
     IBOutlet NSButton* randomMode;
     IBOutlet NSButton* singleMode;
     IBOutlet NSButton* consumeMode;
+    
+    IBOutlet NSProgressIndicator* connectingLevel;
 }
 
 @property BOOL isInPlaylist;
 
 @property (assign) IBOutlet NSWindow* window;
 @property (assign) IBOutlet NSWindow* preferencesWindow;
+@property (assign) IBOutlet NSWindow* connectingWindow;
 
 @property (retain) NSArray* directories;
 @property (assign) IBOutlet NSArrayController* directoriesController;
