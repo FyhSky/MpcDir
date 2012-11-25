@@ -172,6 +172,7 @@
 
 - (IBAction) savePreferencesClick:(id)sender {
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [self.preferencesWindow orderOut:self];
 }
 
 - (IBAction) resetPreferencesClick:(id)sender {
