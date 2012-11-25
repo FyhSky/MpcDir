@@ -49,6 +49,8 @@ FOUNDATION_EXPORT NSString *const MSC_MPD_FORMAT;
 /// Get currently playing musical file.
 - (NSString*) current;
 
+- (BOOL) test;
+
 
 // Playback control
 // ================

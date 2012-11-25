@@ -51,6 +51,30 @@ NSString *const MSC_MPD_FORMAT = @"%position%@@@%artist%@@@%title%@@@%album%@@@%
     return [self mpcrun: @"current", @"--format", MSC_MPD_FORMAT, nil];
 }
 
+- (BOOL) test {
+    NSTask* task = [[NSTask alloc] init];
+    NSPipe* tout = [NSPipe pipe];
+    
+    NSLog(@"testing connection to %@", preferences.host);
+    
+    [task setLaunchPath: @"/sbin/ping"];
+    [task setArguments: [NSArray arrayWithObjects:
+                         @"-c", @"1", @"-t", @"5", preferences.host, nil]];
+    
+    [task setStandardOutput: tout];
+    [task launch];
+    
+    [task waitUntilExit];
+    
+    NSLog(@"connection status is: %d", task.terminationStatus);
+    
+    if (task.terminationStatus == 0) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
 // Playback control
 // ================
 

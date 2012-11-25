@@ -28,6 +28,13 @@
     preferences = [MSCPreferences preferences];
     mpd         = [MSCMpdClient mpd: preferences];
     
+    if ([mpd test]) {
+        NSLog(@"ok");
+    } else {
+        NSLog(@"no connection");
+        return;
+    }
+    
     [self.preferencesWindow orderOut:self];
     [self.window makeFirstResponder: patternField];
     [self statusClick: nil];
