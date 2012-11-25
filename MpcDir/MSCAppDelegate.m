@@ -28,8 +28,9 @@
     preferences = [MSCPreferences preferences];
     mpd         = [MSCMpdClient mpd: preferences];
     
+    [self testConnectionStart];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        if ([self testConnection] == YES) {
+        if ([mpd test] == YES) {
             dispatch_sync(dispatch_get_main_queue(), ^{
                 [self testConnectionSuccess];
             });
@@ -41,34 +42,28 @@
     });
 }
 
-- (BOOL) testConnection {
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [self.preferencesWindow orderOut:self];
+// Test connection to mpd server
+// =============================
+
+- (void) testConnectionStart {
+    [self.preferencesWindow orderOut:self];
     
-        NSRect pos = [self.window frame];
-        NSRect old = [self.connectingWindow frame];
+    NSRect pos = [self.window frame];
+    NSRect old = [self.connectingWindow frame];
     
-        // center owner
-        old.origin.x = pos.origin.x + (pos.size.width / 2) - (old.size.width / 2);
-        old.origin.y = pos.origin.y + (pos.size.height / 2) - (old.size.height / 2);
+    // center owner
+    old.origin.x = pos.origin.x + (pos.size.width / 2) - (old.size.width / 2);
+    old.origin.y = pos.origin.y + (pos.size.height / 2) - (old.size.height / 2);
     
-        [self.connectingWindow setFrame:old display:YES];
-        [self.connectingWindow makeKeyAndOrderFront:self];
-        [connectingLevel startAnimation:self];
-    });
-    
-    BOOL result = [mpd test];
-    
-    dispatch_sync(dispatch_get_main_queue(), ^{
-        [connectingLevel stopAnimation:self];
-        [self.connectingWindow orderOut:self];
-    });
-    
-    return result;
+    [self.connectingWindow setFrame:old display:YES];
+    [self.connectingWindow makeKeyAndOrderFront:self];
+    [connectingLevel startAnimation:self];
 }
 
 - (void) testConnectionSuccess {
     NSLog(@"ok");
+    [connectingLevel stopAnimation:self];
+    [self.connectingWindow orderOut:self];
     [self.window makeFirstResponder: patternField];
     [self.preferencesWindow orderOut:self];
     [self statusClick: nil];
@@ -82,6 +77,8 @@
 
 - (void) testConnectionFail {
     NSLog(@"no connection");
+    [connectingLevel stopAnimation:self];
+    [self.connectingWindow orderOut:self];
     [self showPreferences: nil];
 }
 
